@@ -12,6 +12,20 @@ const lorem = new LoremIpsum({
   }
 })
 
+const capitalizeWords = function(words) {
+  const stringArray = words.split(' ')
+  const newStringArray = []
+
+  for (let i = 0; stringArray.length > i; ++i) {
+    const string = stringArray[i]
+    const capitalizedString = string.charAt(0).toUpperCase() + string.slice(1)
+
+    newStringArray.push( capitalizedString )
+  }
+
+  return newStringArray.join(' ')
+}
+
 export const generateTodos = function(number = 3) {
   const entities = {}
   const keys = []
@@ -22,13 +36,20 @@ export const generateTodos = function(number = 3) {
       Math.floor( Math.random() * 4 ) + 1
     )
 
+    const capitalizedName = capitalizeWords(name)
+
     const description = lorem.generateSentences(
       Math.floor( Math.random() * 2 ) + 1
     )
 
     const id = uuid()
 
-    entities[id] = { id, name, description }
+    entities[id] = { 
+      id, 
+      name: capitalizedName, 
+      description 
+    }
+
     keys.push(id)
   }
 
