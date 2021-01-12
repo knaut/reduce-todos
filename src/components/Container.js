@@ -6,6 +6,7 @@ export const Container = ({ children }) => (
   <Box
     align='center'
     justify='center'
+    pad='medium'
     fill
   >
     <Box

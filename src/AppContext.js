@@ -1,11 +1,16 @@
 import React, { createContext, useContext, useReducer } from 'react'
+import { generateTodos } from './generateTodos'
+import log from './log'
 
 export const AppContext = createContext()
 
+// generate some random todos to display on app start
+const { entities, keys } = generateTodos()
+
 const initialState = {
   // use a flattened, "normalized" pattern for our todos
-  todoEntities: {},
-  todoKeys: []
+  todoEntities: entities,
+  todoKeys: keys
 }
 
 const reducer = function(state, action) {
@@ -20,6 +25,8 @@ const reducer = function(state, action) {
 
 export default function({ children }) {
   const [ state, dispatch ] = useReducer( reducer, initialState )
+
+  log(state)
 
   return (
     <AppContext.Provider value={{ state, dispatch }}>
