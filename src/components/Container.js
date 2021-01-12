@@ -2,7 +2,7 @@ import React from 'react'
 
 import { Box } from 'grommet'
 
-export const Container = ({ children }) => (
+const Container = ({ children }) => (
   <Box
     align='center'
     justify='center'
@@ -21,3 +21,5 @@ export const Container = ({ children }) => (
     </Box> 
   </Box>
 )
+
+export default Container

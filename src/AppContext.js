@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useReducer } from 'react'
+import React, { createContext, useReducer } from 'react'
 import { generateTodos } from './generateTodos'
 import log from './log'
 
@@ -23,7 +23,7 @@ const reducer = function(state, action) {
   }
 }
 
-export default function({ children }) {
+export default function Context({ children }) {
   const [ state, dispatch ] = useReducer( reducer, initialState )
 
   log(state)

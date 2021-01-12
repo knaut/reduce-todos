@@ -1,9 +1,10 @@
 import React from 'react'
 import { Grommet, grommet } from 'grommet'
-import AppContext from './AppContext'
-import { Container } from './components/Container'
-
 import './index.css'
+
+import AppContext from './AppContext'
+import Container from './components/Container'
+import TodoList from './components/TodoList'
 
 export const App = () => (
   <Grommet 
@@ -12,7 +13,7 @@ export const App = () => (
   >
     <AppContext>
       <Container>
-        start
+        <TodoList/>
       </Container>
     </AppContext>
   </Grommet>
