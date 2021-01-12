@@ -1,6 +1,6 @@
 import React, { createContext, useReducer } from 'react'
 import { generateTodos } from './generateTodos'
-import log from './log'
+import { logOldState, logNewState, logAction } from './log'
 
 export const AppContext = createContext()
 
@@ -14,19 +14,25 @@ const initialState = {
 }
 
 const reducer = function(state, action) {
+  logOldState(state)
+  logAction(action)
+
   const { type, payload } = action
 
-  switch(type) {
-    default:
-      return state
-
+  const newState = {
+    ...state
   }
+
+  switch(type) {
+    // add cases to modify newState here
+  }
+
+  logNewState(newState)
+  return newState
 }
 
 export default function Context({ children }) {
   const [ state, dispatch ] = useReducer( reducer, initialState )
-
-  log(state)
 
   return (
     <AppContext.Provider value={{ state, dispatch }}>

@@ -1,5 +1,9 @@
-import React from 'react'
-import { Box, Heading, Text, Checkbox } from 'grommet'
+import React, { useContext } from 'react'
+import { Box, Heading, Text, CheckBox } from 'grommet'
+
+import { AppContext } from '../AppContext'
+
+import { checkedTodo } from '../actions'
 
 const TodoText = ({ name, description }) => (
   <>
@@ -21,9 +25,24 @@ const TodoText = ({ name, description }) => (
   </>
 )
 
+const TodoCheckbox = ({ id }) => {
+  const { dispatch } = useContext(AppContext)
 
-const TodoItem = ({ name, description }) => (
+  return (
+    <CheckBox
+      onChange={() => dispatch(
+        checkedTodo({
+          id
+        })
+      )}
+    />
+  )
+}
+
+
+const TodoItem = ({ id, name, description }) => (
   <Box as='li'>
+    <TodoCheckbox id={id}/>
     <TodoText name={name} description={description}/>
   </Box>
 )

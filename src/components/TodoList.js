@@ -25,6 +25,7 @@ export default function TodoListWithContext() {
           return (
             <Todo
               key={id}
+              id={id}
               name={name}
               description={description}
             />
