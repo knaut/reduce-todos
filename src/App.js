@@ -1,7 +1,10 @@
 import React from 'react'
+import { Grommet, grommet } from 'grommet'
 
 export const App = () => (
-  <div>
-    start
-  </div>
+  <Grommet theme={grommet}>
+    <div>
+      start
+    </div>
+  </Grommet>
 )
