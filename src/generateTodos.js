@@ -7,7 +7,7 @@ const lorem = new LoremIpsum({
     min: 4
   },
   wordsPerSentence: {
-    max: 16,
+    max: 12,
     min: 4
   }
 })
@@ -33,7 +33,7 @@ export const generateTodos = function(number = 3) {
   for (let n = 0; number > n; ++n) {
     
     const name = lorem.generateWords(
-      Math.floor( Math.random() * 4 ) + 1
+      Math.floor( Math.random() * 3 ) + 1
     )
 
     const capitalizedName = capitalizeWords(name)
@@ -44,10 +44,13 @@ export const generateTodos = function(number = 3) {
 
     const id = uuid()
 
+    const isCompleted = false
+
     entities[id] = { 
       id, 
       name: capitalizedName, 
-      description 
+      description,
+      isCompleted
     }
 
     keys.push(id)

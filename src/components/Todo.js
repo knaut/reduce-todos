@@ -1,11 +1,31 @@
 import React from 'react'
-import { Box } from 'grommet'
+import { Box, Heading, Text, Checkbox } from 'grommet'
 
 const TodoText = ({ name, description }) => (
+  <>
+    <Box>
+      <Heading
+        level={3}
+        margin='none'
+      >
+        {name}
+      </Heading>
+    </Box>
+    <Box>
+      <Text
+        size='small'
+      >
+        {description}
+      </Text>
+    </Box>
+  </>
+)
+
+
+const TodoItem = ({ name, description }) => (
   <Box as='li'>
-    {name}
-    {description}
+    <TodoText name={name} description={description}/>
   </Box>
 )
 
-export default TodoText
+export default TodoItem
