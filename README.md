@@ -13,3 +13,7 @@ Application should be able to:
 Technologies used to achieve app's goals:
 - React (via Create React App CLI)
 - [Grommet](https://v2.grommet.io/) (for pre-fabricated styled components)
+
+## 📸 Screenshot
+Screenshot of the local application running with 2/3 to-dos checked:
+![Screenshot of Reduce Todos](./reducetodos.png)
