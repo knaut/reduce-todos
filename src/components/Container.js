@@ -12,7 +12,6 @@ const Container = ({ children }) => (
     <Box
       background='light-6'
       width='large'
-      height='medium'
       align='center'
       justify='center'
       round='small'
