@@ -50,7 +50,6 @@ const TodoItem = ({ id, name, description }) => (
       ]}
     >
       <Box
-        align='left'
         justify='center'
       >
         <TodoCheckbox id={id}/>

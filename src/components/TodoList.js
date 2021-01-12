@@ -19,8 +19,9 @@ export default function TodoListWithContext() {
   return (
     <TodoList>
       {
-        todoKeys.map(todo => {
-          const { id, name, description } = todoEntities[todo]
+        todoKeys.map(todoKey => {
+          const todo = todoEntities[todoKey]
+          const { id, name, description } = todo
 
           return (
             <Todo

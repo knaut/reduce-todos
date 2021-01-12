@@ -5,6 +5,7 @@ import './index.css'
 import AppContext from './AppContext'
 import Container from './components/Container'
 import TodoList from './components/TodoList'
+import TodoMeter from './components/TodoMeter'
 
 export const App = () => (
   <Grommet 
@@ -13,6 +14,7 @@ export const App = () => (
   >
     <AppContext>
       <Container>
+        <TodoMeter/>
         <TodoList/>
       </Container>
     </AppContext>
