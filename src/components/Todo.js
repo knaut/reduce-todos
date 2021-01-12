@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { Box, Heading, Text, CheckBox } from 'grommet'
+import { Box, Heading, Text, CheckBox, Grid } from 'grommet'
 
 import { AppContext } from '../AppContext'
 
@@ -41,9 +41,24 @@ const TodoCheckbox = ({ id }) => {
 
 
 const TodoItem = ({ id, name, description }) => (
-  <Box as='li'>
-    <TodoCheckbox id={id}/>
-    <TodoText name={name} description={description}/>
+  <Box as='li' pad={{vertical: 'small'}}>
+    <Grid
+      fill
+      columns={[
+        'xxsmall',
+        'flex'
+      ]}
+    >
+      <Box
+        align='left'
+        justify='center'
+      >
+        <TodoCheckbox id={id}/>
+      </Box>
+      <Box>
+        <TodoText name={name} description={description}/>
+      </Box>
+    </Grid>
   </Box>
 )
 
