@@ -7,7 +7,8 @@ const Container = ({ children }) => (
     align='center'
     justify='center'
     pad='medium'
-    fill
+    fill={{ horizontal: true }}
+    style={{ overflow: 'scroll' }}
   >
     <Box
       background='light-6'
@@ -15,6 +16,9 @@ const Container = ({ children }) => (
       align='center'
       justify='center'
       round='small'
+      style={{
+        minHeight: 'auto'
+      }}
     >
       {children}
     </Box> 

@@ -10,7 +10,8 @@ import TodoMeter from './components/TodoMeter'
 export const App = () => (
   <Grommet 
     theme={grommet}
-    full
+    full={{horizontal: true}}
+    style={{ height: 'auto' }}
   >
     <AppContext>
       <Container>

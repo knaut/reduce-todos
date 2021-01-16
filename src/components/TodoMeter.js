@@ -18,7 +18,7 @@ const getCompletedTodosValue = function(entities, total) {
   }
 
   // assume the count is akin to a percentage
-  const percentage = Math.floor((100 / total) * count)
+  const percentage = (Math.floor((100 / total) * count));
 
   return percentage
 }
@@ -31,7 +31,7 @@ export default function TodoMeter() {
 
   return (
     <Box>
-      <Heading level={4}>To-dos completed:</Heading>
+      <Heading level={4}>To-dos completed: {isCompletedValue}% of {todoKeys.length}</Heading>
       <Meter type='bar' background='light-2' values={[{ value: isCompletedValue }]} />
     </Box>
   )
